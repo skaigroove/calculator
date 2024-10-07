@@ -18,7 +18,7 @@ class DivisionByZeroError(Exception):
         
 # degree 단위를 radian 단위로 환산해주는 메소드 
 def convert_to_radians(x : Union[int, float],**kwargs) -> Union[float, int]:
-    unit = kwargs.get('angle_unit')    
+    unit = kwargs.get('angle_unit')
     if unit == 'degree': # degree 단위일 경우, radian로 변환
         return float(math.radians(x))
     elif unit == 'radian': # radian 단위일 경우, 그대로
@@ -37,7 +37,7 @@ def round_result(x,**kwargs) -> None:
             return f"PolarPoint(r={x.r:.{precision}f}, theta={x.theta:.{precision}f})"  # 극좌표를 포맷 
         # 소수점 자릿수 제한을 위해 float 형으로 변환
         # 첫번째 인수(0)을 소수점 이하 precision 자리만큼 포맷
-        format_str = f"{{0:.{precision}f}}" 
+        format_str = f"{{0:.{precision}f}}"
         return format_str.format(x)
 
 # 직교 좌표계(x,y)를 극좌표계(r,theta)로 변환해주는 메소드

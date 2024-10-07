@@ -153,7 +153,7 @@ class EngineeringCalculator(Calculator):
 class ComplexCalculator(EngineeringCalculator):
      
     # 복소수 입력들의 합을 구하는 메서드
-    def add_complex(self,*args,**kwargs):
+    def add_complex(self,*args,**kwargs)-> Union[int, float]:
         for i, arg in enumerate(args):
             # 첫 연산값을 첫 번째 입력으로 초기화
             if i == 0:
@@ -165,7 +165,7 @@ class ComplexCalculator(EngineeringCalculator):
         return self.output
     
     # 복소수 입력들의 차를 구하는 메서드
-    def sub_complex(self,*args,**kwargs):
+    def sub_complex(self,*args,**kwargs)-> Union[int, float]:
         for i, arg in enumerate(args):
             # 첫 연산값을 첫 번째 입력으로 초기화
             if i == 0:
@@ -177,7 +177,7 @@ class ComplexCalculator(EngineeringCalculator):
         return self.output
         
     # 복소수 입력들의 곱을 구하는 메서드
-    def mul_complex(self,*args,**kwargs):
+    def mul_complex(self,*args,**kwargs)-> Union[int, float]:
         for i, arg in enumerate(args):
             # 첫 연산값을 첫 번째 입력으로 초기화
             if i == 0:
@@ -189,7 +189,7 @@ class ComplexCalculator(EngineeringCalculator):
         return self.output
         
     # 복소수 입력들의 나눗셈 연산을 하는 메서드
-    def div_complex(self,*args,**kwargs):
+    def div_complex(self,*args,**kwargs)-> Union[int, float]:
         for i, arg in enumerate(args):
             # 첫 연산값을 첫 번째 입력으로 초기화
             if i == 0:
@@ -204,24 +204,24 @@ class ComplexCalculator(EngineeringCalculator):
         return self.output
     
     # 복소수의 절댓값 연산을 처리    
-    def magnitude_complex(self,z:complex,**kwargs):
+    def magnitude_complex(self,z:complex,**kwargs)-> Union[int, float]:
         # 절댓값 연산을 처리
         self.output = abs(z)
         # 지정된 옵션을 처리    
         self.option(**kwargs)
         return self.output      
     
-    # 복소수의 편각 연산을 처리. 입력은 
-    def argument_complex(self,z:complex,**kwargs):
+    # 복소수의 편각 연산을 처리.
+    def argument_complex(self,z:complex,**kwargs)-> Union[int, float]:
         # 복소수의 편각 계산
         self.output = cmath.phase(z)
-        # 지정된 옵션을 처리    
+        # 지정된 옵션을 처리
         self.option(**kwargs)
         return self.output
     
     # Override -> 옵션에 따라 처리하도록 경우에 따라 실행 로직을 정의해준 메서드      
     def option(self,**kwargs) -> None:
-        if 'return_polar' in kwargs:
+        if 'return_polar' in kwargs: # 출력을 극좌표계로 표현해야 할 경우를 처리
             self.output = convert_to_polar(self.output,**kwargs)
         if 'precision' in kwargs: # 소수점 자리를 지정해줬을 경우 처리
             self.output = round_result(self.output,**kwargs)
@@ -245,9 +245,12 @@ if __name__ == '__main__':
     print("\nEngineering Calculator Demo:")
     print(eng_calc.square_root(16))
     print(eng_calc.sin(30, angle_unit='degree'))
+    print(eng_calc.sin(60, angle_unit='radian', precision=2))
+    
     
     print("\nComplex Calculator Demo:")
     print(complex_calc.add_complex(1+2j, 3+4j, return_polar=True, precision=2))
     print(complex_calc.mul_complex(1+2j, 3+4j))
     print(complex_calc.magnitude_complex(3+4j))
     print(complex_calc.argument_complex(1+2j))
+    
