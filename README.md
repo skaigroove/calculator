@@ -20,7 +20,7 @@ export PYTHONPATH=$PYTHONPATH:~/calculator # 파이썬 PATH를 설정해줍니�
 python test_using_calc.py # 파이썬 파일을 실행합니다
 ```
 
-![image.png](Calculator%image/image.png)
+![using_package](https://github.com/user-attachments/assets/0766cdec-affc-457b-9ae8-b65b3706ec02)
 
 # Structure
 
@@ -137,12 +137,12 @@ from .utils import *
     
     `루트 디렉토리`에서 `pytest` 명령어로 테스트 파일 실행
     
-    ![image.png](Calculator%20Doc%20ver%202%20726b30bd6f754db5978ca351b3a0b9a9/image%201.png)
+    ![pytest](https://github.com/user-attachments/assets/a5bc9fd4-4fd9-49a2-9c2f-3909aeae727c)
+
     
 - 결과
     
-    ![image.png](Calculator%20Doc%20ver%202%20726b30bd6f754db5978ca351b3a0b9a9/image%202.png)
-    
+    ![test_success](https://github.com/user-attachments/assets/e17725ca-bc42-4837-ab42-87059dc75d05)
 
 ---
 
