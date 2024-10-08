@@ -43,7 +43,7 @@ calculator/
 
 ---
 
-# **1. `__init**__.py`
+# 1. `__init__.py`
 
 <aside>
 💡
@@ -64,7 +64,7 @@ from .utils import *
 
 ---
 
-# **2. `calculator**.py`
+# 2. `calculator.py`
 
 <aside>
 💡
@@ -100,7 +100,7 @@ from .utils import *
 
 ---
 
-# **3. `basic**.py` , `engineering.py` , `complex.py`
+# 3. `basic.py` , `engineering.py` , `complex.py`
 
 <aside>
 💡
