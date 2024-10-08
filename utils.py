@@ -3,10 +3,13 @@ import math
 from typing import Union
 
 class PolarPoint:
+    
+    # 생성자 메소드
     def __init__(self, r, theta):
        self.r = r  # 반지름
        self.theta = theta  # 각도 (라디안)
 
+    # PolarPoint 객체의 문자열 표현을 반환
     def __repr__(self):
        return f"PolarPoint(r={self.r}, theta={self.theta})"
 
