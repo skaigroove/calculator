@@ -20,7 +20,7 @@ export PYTHONPATH=$PYTHONPATH:~/calculator # 파이썬 PATH를 설정해줍니�
 python test_using_calc.py # 파이썬 파일을 실행합니다
 ```
 
-![image.png](Calculator%20Doc%20ver%202%20726b30bd6f754db5978ca351b3a0b9a9/image.png)
+![image.png](Calculator%image/image.png)
 
 # Structure
 
